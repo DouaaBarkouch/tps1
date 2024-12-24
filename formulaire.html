@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajouter un Véhicule</title>
+    <style>
+        /* Styling global */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        h1 {
+            text-align: center;
+            color: #343a40;
+            margin-bottom: 20px;
+        }
+
+        /* Styling du formulaire */
+        form {
+            background-color: #ffffff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            margin: 40px 0; /* Marges ajoutées en haut et en bas */
+        }
+
+        label {
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 8px;
+            display: block;
+            color: #495057;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            font-size: 14px;
+            background-color: #f1f1f1;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
+            outline: none;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        button:active {
+            background-color: #004080;
+        }
+    </style>
+</head>
+<body>
+    <form action="ajouter_vehicule.php" method="post">
+        <h1>Ajouter un Véhicule</h1>
+        <label for="numero_identification">Numéro d'Identification :</label>
+        <input type="text" id="numero_identification" name="numero_identification" placeholder="Ex: ABC12345" required>
+
+        <label for="type_vehicule">Type de Véhicule :</label>
+        <select id="type_vehicule" name="type_vehicule" required>
+            <option value="">-- Sélectionnez --</option>
+            <option value="Bus">Bus</option>
+            <option value="Minibus">Minibus</option>
+            <option value="Voiture">Voiture</option>
+        </select>
+
+        <label for="nombre_passagers">Nombre Maximal de Passagers :</label>
+        <input type="number" id="nombre_passagers" name="nombre_passagers" placeholder="Ex: 50" required>
+
+        <label for="etat">État Actuel :</label>
+        <select id="etat" name="etat" required>
+            <option value="">-- Sélectionnez --</option>
+            <option value="Operationnel">Opérationnel</option>
+            <option value="Maintenance">En Maintenance</option>
+            <option value="Hors_Service">Hors Service</option>
+        </select>
+
+        <label for="marque">Marque :</label>
+        <input type="text" id="marque" name="marque" placeholder="Ex: Renault" required>
+
+        <label for="modele">Modèle :</label>
+        <input type="text" id="modele" name="modele" placeholder="Ex: Clio" required>
+
+        <label for="annee_fabrication">Année de Fabrication :</label>
+        <input type="number" id="annee_fabrication" name="annee_fabrication" placeholder="Ex: 2020" required>
+
+        <label for="documents_validite">Documents et Validité :</label>
+        <textarea id="documents_validite" name="documents_validite" rows="4" placeholder="Détails des documents légaux et leur validité..." required></textarea>
+
+        <button type="submit">Ajouter le Véhicule</button>
+    </form>
+</body>
+</html>
